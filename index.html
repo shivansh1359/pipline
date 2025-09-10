@@ -16,7 +16,6 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             color: white;
-            overflow-x: hidden;
         }
 
         .container {
@@ -28,12 +27,6 @@
         .header {
             text-align: center;
             margin-bottom: 30px;
-            animation: fadeInDown 1s ease;
-        }
-
-        @keyframes fadeInDown {
-            0% { opacity: 0; transform: translateY(-20px); }
-            100% { opacity: 1; transform: translateY(0); }
         }
 
         .logo {
@@ -44,23 +37,15 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .connection-section {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 30px;
             margin-bottom: 30px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            animation: fadeInUp 1s ease;
-        }
-
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
         }
 
         .connection-code {
@@ -69,32 +54,18 @@
             gap: 15px;
             margin-bottom: 20px;
             flex-wrap: wrap;
-            justify-content: center;
         }
 
         .code-display {
-            background: linear-gradient(45deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+            background: rgba(0, 0, 0, 0.3);
             padding: 15px 25px;
             border-radius: 15px;
             font-family: 'Courier New', monospace;
-            font-size: 1.8em;
+            font-size: 1.5em;
             font-weight: bold;
             letter-spacing: 3px;
             border: 2px solid #ffd93d;
-            box-shadow: 0 0 20px rgba(255, 217, 61, 0.5);
-            animation: glow 2s infinite alternate;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .code-display:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(255, 217, 61, 0.8);
-        }
-
-        @keyframes glow {
-            0% { box-shadow: 0 0 20px rgba(255, 217, 61, 0.5); }
-            100% { box-shadow: 0 0 30px rgba(255, 217, 61, 0.8); }
+            box-shadow: 0 0 20px rgba(255, 217, 61, 0.3);
         }
 
         .btn {
@@ -105,23 +76,6 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 1em;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
         }
 
         .btn-primary {
@@ -131,8 +85,8 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
         }
 
         .btn-secondary {
@@ -141,33 +95,31 @@
         }
 
         .btn-secondary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(78, 205, 196, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
         }
 
         .main-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 30px;
-            animation: slideIn 1s ease;
-        }
-
-        @keyframes slideIn {
-            0% { opacity: 0; transform: translateX(-20px); }
-            100% { opacity: 1; transform: translateX(0); }
-        }
-
-        .sidebar, .content-area {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            padding: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
         }
 
         .sidebar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             height: fit-content;
+        }
+
+        .content-area {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .tool-section {
@@ -178,9 +130,6 @@
             margin-bottom: 15px;
             color: #ffd93d;
             font-size: 1.2em;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .tool-buttons {
@@ -199,19 +148,11 @@
             transition: all 0.3s ease;
             text-align: center;
             font-size: 0.9em;
-            position: relative;
-            overflow: hidden;
         }
 
         .tool-btn:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .tool-btn:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .emoji-picker {
@@ -222,7 +163,7 @@
         }
 
         .emoji {
-            font-size: 1.8em;
+            font-size: 1.5em;
             cursor: pointer;
             text-align: center;
             padding: 8px;
@@ -232,11 +173,7 @@
 
         .emoji:hover {
             background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.3);
-        }
-
-        .emoji:active {
-            transform: scale(1.1);
+            transform: scale(1.2);
         }
 
         .chat-area {
@@ -246,22 +183,14 @@
             border-radius: 15px;
             padding: 20px;
             margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .message {
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            background: rgba(255, 255, 255, 0.1);
             padding: 12px 16px;
             border-radius: 15px;
             margin-bottom: 10px;
             border-left: 4px solid #ffd93d;
-            animation: messageSlide 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-
-        @keyframes messageSlide {
-            0% { opacity: 0; transform: translateX(-20px); }
-            100% { opacity: 1; transform: translateX(0); }
         }
 
         .message-time {
@@ -285,62 +214,10 @@
             font-size: 1em;
             outline: none;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
-        }
-
-        .message-input:focus {
-            border-color: #ffd93d;
-            box-shadow: 0 0 15px rgba(255, 217, 61, 0.3);
-            background: rgba(255, 255, 255, 0.15);
         }
 
         .message-input::placeholder {
             color: rgba(255, 255, 255, 0.7);
-        }
-
-        .tabs {
-            display: flex;
-            margin-bottom: 20px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
-            padding: 5px;
-            backdrop-filter: blur(10px);
-        }
-
-        .tab {
-            flex: 1;
-            padding: 12px;
-            text-align: center;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .tab:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .tab.active {
-            background: linear-gradient(45deg, rgba(255, 217, 61, 0.4), rgba(255, 217, 61, 0.2));
-            color: #ffd93d;
-            font-weight: bold;
-            box-shadow: 0 2px 10px rgba(255, 217, 61, 0.3);
-        }
-
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        .tab-content.active {
-            display: block;
         }
 
         .whiteboard {
@@ -350,7 +227,6 @@
             border-radius: 15px;
             cursor: crosshair;
             background: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
         .drawing-tools {
@@ -358,20 +234,18 @@
             display: flex;
             gap: 10px;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .color-picker {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            border: 2px solid white;
+            border: none;
             cursor: pointer;
-            transition: transform 0.3s ease;
         }
 
-        .color-picker:hover {
-            transform: scale(1.1);
+        .file-upload {
+            display: none;
         }
 
         .upload-area {
@@ -382,22 +256,19 @@
             margin: 20px 0;
             transition: all 0.3s ease;
             cursor: pointer;
-            backdrop-filter: blur(5px);
         }
 
         .upload-area:hover {
             border-color: #ffd93d;
             background: rgba(255, 217, 61, 0.1);
-            transform: scale(1.02);
         }
 
         .connected-devices {
-            background: linear-gradient(45deg, rgba(0, 255, 0, 0.1), rgba(0, 255, 0, 0.05));
+            background: rgba(0, 255, 0, 0.1);
             border: 1px solid rgba(0, 255, 0, 0.3);
-            border-radius: 15px;
+            border-radius: 10px;
             padding: 15px;
             margin-top: 20px;
-            backdrop-filter: blur(10px);
         }
 
         .device-item {
@@ -410,7 +281,6 @@
 
         .status-online {
             color: #4ecdc4;
-            font-weight: bold;
         }
 
         .status-indicator {
@@ -424,79 +294,53 @@
         }
 
         @keyframes pulse {
-            0% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-            100% { opacity: 1; transform: scale(1); }
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
 
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(45deg, #4ecdc4, #44a08d);
-            color: white;
-            padding: 15px 20px;
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 5px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            z-index: 1000;
-            animation: slideInRight 0.5s ease;
+            transition: all 0.3s ease;
+        }
+
+        .tab.active {
+            background: rgba(255, 217, 61, 0.3);
+            color: #ffd93d;
+        }
+
+        .tab-content {
             display: none;
         }
 
-        @keyframes slideInRight {
-            0% { opacity: 0; transform: translateX(100px); }
-            100% { opacity: 1; transform: translateX(0); }
-        }
-
-        .file-upload {
-            display: none;
+        .tab-content.active {
+            display: block;
         }
 
         @media (max-width: 768px) {
             .main-content {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
             
             .connection-code {
                 flex-direction: column;
-                text-align: center;
             }
             
             .code-display {
-                font-size: 1.4em;
+                font-size: 1.2em;
             }
-
-            .logo {
-                font-size: 2em;
-            }
-
-            .container {
-                padding: 10px;
-            }
-
-            .tool-buttons {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .emoji-picker {
-                grid-template-columns: repeat(6, 1fr);
-            }
-        }
-
-        /* Loading Animation */
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255,255,255,.3);
-            border-radius: 50%;
-            border-top-color: #fff;
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -504,31 +348,31 @@
     <div class="container">
         <div class="header">
             <div class="logo">📱💻 ShareConnect</div>
-            <p>Real-time sharing between phone and system - <strong>Working Version!</strong></p>
+            <p>Real-time sharing between phone and system</p>
         </div>
 
         <div class="connection-section">
-            <h2>🔗 Connection Hub</h2>
+            <h2>🔗 Connection</h2>
             <div class="connection-code">
                 <div>
-                    <strong>Your Room Code:</strong>
-                    <div class="code-display" id="roomCode" onclick="copyCode()" title="Click to copy">ABC123</div>
+                    <strong>Room Code:</strong>
+                    <div class="code-display" id="roomCode">ABC123</div>
                 </div>
-                <button class="btn btn-primary" onclick="generateNewCode()">🎲 New Code</button>
-                <button class="btn btn-secondary" onclick="copyCode()">📋 Copy Code</button>
+                <button class="btn btn-primary" onclick="generateNewCode()">New Code</button>
+                <button class="btn btn-secondary" onclick="copyCode()">Copy Code</button>
             </div>
             
-            <div style="text-align: center; margin: 20px 0;">
-                <input type="text" id="joinCode" placeholder="Enter friend's room code..." 
-                       style="padding: 12px 20px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); color: white; margin-right: 10px; width: 250px; text-align: center; font-size: 1.1em;">
-                <button class="btn btn-secondary" onclick="joinRoom()">🚀 Join Room</button>
+            <div>
+                <input type="text" id="joinCode" placeholder="Enter room code to join..." 
+                       style="padding: 12px; border-radius: 25px; border: none; background: rgba(255,255,255,0.1); color: white; margin-right: 10px; width: 200px;">
+                <button class="btn btn-secondary" onclick="joinRoom()">Join Room</button>
             </div>
 
             <div class="connected-devices">
-                <h4>🌐 Connected Devices (<span id="deviceCount">1</span>):</h4>
+                <h4>Connected Devices:</h4>
                 <div id="deviceList">
                     <div class="device-item">
-                        <span><span class="status-indicator"></span>Your Device (Host)</span>
+                        <span><span class="status-indicator"></span>Your Device</span>
                         <span class="status-online">Online</span>
                     </div>
                 </div>
@@ -540,24 +384,24 @@
                 <div class="tool-section">
                     <h3>📤 Quick Share</h3>
                     <div class="tool-buttons">
-                        <div class="tool-btn" onclick="sharePhoto()">📷 Photo</div>
-                        <div class="tool-btn" onclick="shareVideo()">🎥 Video</div>
-                        <div class="tool-btn" onclick="shareMusic()">🎵 Music</div>
-                        <div class="tool-btn" onclick="shareFile()">📁 File</div>
+                        <div class="tool-btn" onclick="openFileUpload('image')">📷 Photo</div>
+                        <div class="tool-btn" onclick="openFileUpload('video')">🎥 Video</div>
+                        <div class="tool-btn" onclick="openFileUpload('audio')">🎵 Music</div>
+                        <div class="tool-btn" onclick="openFileUpload('file')">📁 File</div>
                     </div>
                 </div>
 
                 <div class="tool-section">
-                    <h3>😊 Emojis & Reactions</h3>
+                    <h3>😊 Emojis & Stickers</h3>
                     <div class="emoji-picker">
-                        <span class="emoji" onclick="sendEmoji('😀')" title="Happy">😀</span>
-                        <span class="emoji" onclick="sendEmoji('😂')" title="Laughing">😂</span>
-                        <span class="emoji" onclick="sendEmoji('❤️')" title="Love">❤️</span>
-                        <span class="emoji" onclick="sendEmoji('👍')" title="Thumbs up">👍</span>
-                        <span class="emoji" onclick="sendEmoji('🎉')" title="Celebration">🎉</span>
-                        <span class="emoji" onclick="sendEmoji('🔥')" title="Fire">🔥</span>
-                        <span class="emoji" onclick="sendEmoji('💯')" title="Hundred">💯</span>
-                        <span class="emoji" onclick="sendEmoji('🚀')" title="Rocket">🚀</span>
+                        <span class="emoji" onclick="sendEmoji('😀')">😀</span>
+                        <span class="emoji" onclick="sendEmoji('😂')">😂</span>
+                        <span class="emoji" onclick="sendEmoji('❤️')">❤️</span>
+                        <span class="emoji" onclick="sendEmoji('👍')">👍</span>
+                        <span class="emoji" onclick="sendEmoji('🎉')">🎉</span>
+                        <span class="emoji" onclick="sendEmoji('🔥')">🔥</span>
+                        <span class="emoji" onclick="sendEmoji('💯')">💯</span>
+                        <span class="emoji" onclick="sendEmoji('🚀')">🚀</span>
                     </div>
                 </div>
 
@@ -565,222 +409,311 @@
                     <h3>📍 Quick Actions</h3>
                     <div class="tool-buttons">
                         <div class="tool-btn" onclick="shareLocation()">📍 Location</div>
-                        <div class="tool-btn" onclick="shareLink()">🔗 Share Link</div>
+                        <div class="tool-btn" onclick="shareLink()">🔗 Link</div>
                         <div class="tool-btn" onclick="takeScreenshot()">📸 Screenshot</div>
-                        <div class="tool-btn" onclick="sendTextFile()">📝 Text Note</div>
                     </div>
                 </div>
             </div>
 
             <div class="content-area">
                 <div class="tabs">
-                    <div class="tab active" onclick="switchTab('chat')">💬 Live Chat</div>
+                    <div class="tab active" onclick="switchTab('chat')">💬 Chat</div>
                     <div class="tab" onclick="switchTab('whiteboard')">🎨 Whiteboard</div>
-                    <div class="tab" onclick="switchTab('files')">📁 File Share</div>
+                    <div class="tab" onclick="switchTab('files')">📁 Files</div>
                 </div>
 
                 <div id="chatTab" class="tab-content active">
                     <div class="chat-area" id="chatArea">
                         <div class="message">
-                            <strong>🤖 ShareConnect:</strong> Welcome! Your room is ready. Share your code <strong id="displayCode">ABC123</strong> with others to connect.
-                            <span class="message-time">Just now</span>
-                        </div>
-                        <div class="message">
-                            <strong>💡 Tip:</strong> Try sending messages, emojis, or sharing files. Everything works in real-time!
+                            <strong>System:</strong> Room created successfully! Share the code with others to connect.
                             <span class="message-time">Just now</span>
                         </div>
                     </div>
                     
                     <div class="input-area">
                         <input type="text" class="message-input" id="messageInput" 
-                               placeholder="Type your message and press Enter..." onkeypress="handleEnter(event)">
-                        <button class="btn btn-primary" onclick="sendMessage()">📤 Send</button>
+                               placeholder="Type your message..." onkeypress="handleEnter(event)">
+                        <button class="btn btn-primary" onclick="sendMessage()">Send</button>
                     </div>
                 </div>
 
                 <div id="whiteboardTab" class="tab-content">
                     <div class="drawing-tools">
-                        <span style="margin-right: 10px;">🎨 Draw:</span>
-                        <input type="color" class="color-picker" id="colorPicker" value="#000000" title="Choose color">
-                        <input type="range" id="brushSize" min="1" max="20" value="3" 
-                               style="margin: 0 10px; width: 100px;" title="Brush size">
-                        <button class="btn btn-secondary" onclick="clearCanvas()" title="Clear board">🗑️ Clear</button>
-                        <button class="btn btn-secondary" onclick="saveDrawing()" title="Save drawing">💾 Save</button>
+                        <input type="color" class="color-picker" id="colorPicker" value="#000000">
+                        <input type="range" id="brushSize" min="1" max="20" value="5" 
+                               style="margin: 0 10px;">
+                        <button class="btn btn-secondary" onclick="clearCanvas()">Clear</button>
+                        <button class="btn btn-secondary" onclick="saveDrawing()">Save</button>
                     </div>
-                    <canvas class="whiteboard" id="whiteboard" width="800" height="400"></canvas>
-                    <p style="text-align: center; margin-top: 10px; opacity: 0.8;">
-                        🖱️ Click and drag to draw • 📱 Touch and drag on mobile
-                    </p>
+                    <canvas class="whiteboard" id="whiteboard"></canvas>
                 </div>
 
                 <div id="filesTab" class="tab-content">
                     <div class="upload-area" onclick="document.getElementById('fileInput').click()">
-                        <h3>📤 Drop Files Here</h3>
-                        <p>or click to browse and select files</p>
-                        <small>Supports: Images, Videos, Music, Documents, etc.</small>
+                        <h3>📤 Drag & Drop Files Here</h3>
+                        <p>or click to browse</p>
                     </div>
-                    <div id="fileList">
-                        <h4 style="margin: 20px 0 10px 0; color: #ffd93d;">📂 Shared Files:</h4>
-                    </div>
+                    <div id="fileList"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="notification" id="notification"></div>
     <input type="file" id="fileInput" class="file-upload" multiple onchange="handleFileUpload(event)">
 
     <script>
-        // Global Variables
+        // Global variables
         let roomCode = 'ABC123';
-        let messageCount = 0;
-        let connectedUsers = ['You (Host)'];
-        let canvas, ctx;
+        let connectedDevices = [];
+        let messages = [];
         let isDrawing = false;
+        let canvas, ctx;
 
-        // Initialize everything when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('ShareConnect initialized!');
-            showNotification('🎉 ShareConnect is ready!', 'success');
-            setTimeout(initCanvas, 500);
-        });
+        // Initialize canvas
+        function initCanvas() {
+            canvas = document.getElementById('whiteboard');
+            ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
 
-        // Notification System
-        function showNotification(message, type = 'info') {
-            const notification = document.getElementById('notification');
-            notification.textContent = message;
-            notification.style.display = 'block';
-            
-            if (type === 'success') {
-                notification.style.background = 'linear-gradient(45deg, #4ecdc4, #44a08d)';
-            } else if (type === 'error') {
-                notification.style.background = 'linear-gradient(45deg, #ff6b6b, #ff8e53)';
-            }
-            
-            setTimeout(() => {
-                notification.style.display = 'none';
-            }, 3000);
+            // Mouse events
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDrawing);
+            canvas.addEventListener('mouseout', stopDrawing);
+
+            // Touch events for mobile
+            canvas.addEventListener('touchstart', handleTouch);
+            canvas.addEventListener('touchmove', handleTouch);
+            canvas.addEventListener('touchend', stopDrawing);
         }
 
-        // Room Management
-        function generateNewCode() {
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            roomCode = '';
-            for (let i = 0; i < 6; i++) {
-                roomCode += chars.charAt(Math.floor(Math.random() * chars.length));
-            }
+        function handleTouch(e) {
+            e.preventDefault();
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
             
+            if (e.type === 'touchstart') {
+                isDrawing = true;
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+            } else if (e.type === 'touchmove' && isDrawing) {
+                ctx.lineTo(x, y);
+                ctx.stroke();
+            }
+        }
+
+        function startDrawing(e) {
+            isDrawing = true;
+            const rect = canvas.getBoundingClientRect();
+            ctx.beginPath();
+            ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            const rect = canvas.getBoundingClientRect();
+            ctx.lineWidth = document.getElementById('brushSize').value;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = document.getElementById('colorPicker').value;
+            ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
+            ctx.stroke();
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+        }
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            addMessage('System', 'Whiteboard cleared');
+        }
+
+        function saveDrawing() {
+            const link = document.createElement('a');
+            link.download = 'whiteboard-drawing.png';
+            link.href = canvas.toDataURL();
+            link.click();
+            addMessage('System', 'Drawing saved as image');
+        }
+
+        // Tab switching
+        function switchTab(tabName) {
+            // Hide all tab contents
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabButtons = document.querySelectorAll('.tab');
+            tabButtons.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected tab
+            document.getElementById(tabName + 'Tab').classList.add('active');
+            event.target.classList.add('active');
+            
+            if (tabName === 'whiteboard') {
+                setTimeout(initCanvas, 100);
+            }
+        }
+
+        // Room management
+        function generateNewCode() {
+            roomCode = Math.random().toString(36).substring(2, 8).toUpperCase();
             document.getElementById('roomCode').textContent = roomCode;
-            document.getElementById('displayCode').textContent = roomCode;
-            addMessage('🤖 System', `New room code generated: <strong>${roomCode}</strong>`);
-            showNotification(`New room code: ${roomCode}`, 'success');
+            addMessage('System', `New room code generated: ${roomCode}`);
         }
 
         function copyCode() {
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(roomCode).then(() => {
-                    showNotification('✅ Room code copied!', 'success');
-                    addMessage('📋 System', 'Room code copied to clipboard');
-                });
-            } else {
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = roomCode;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                showNotification('✅ Room code copied!', 'success');
-            }
+            navigator.clipboard.writeText(roomCode).then(() => {
+                addMessage('System', 'Room code copied to clipboard!');
+            });
         }
 
         function joinRoom() {
-            const joinCode = document.getElementById('joinCode').value.trim().toUpperCase();
-            if (joinCode && joinCode.length >= 3) {
+            const joinCode = document.getElementById('joinCode').value.toUpperCase();
+            if (joinCode) {
                 roomCode = joinCode;
                 document.getElementById('roomCode').textContent = roomCode;
-                document.getElementById('displayCode').textContent = roomCode;
-                document.getElementById('joinCode').value = '';
-                
-                addMessage('🚀 System', `Joined room: <strong>${roomCode}</strong>`);
-                showNotification(`✅ Joined room ${roomCode}`, 'success');
-                
-                // Simulate connection
-                setTimeout(() => {
-                    simulateUserJoin();
-                }, 1500);
-            } else {
-                showNotification('❌ Please enter a valid room code', 'error');
+                addMessage('System', `Joined room: ${roomCode}`);
+                simulateDeviceConnection();
             }
         }
 
-        function simulateUserJoin() {
-            const devices = ['📱 iPhone 12', '💻 MacBook Pro', '🖥️ Windows PC', '📱 Samsung Galaxy', '💻 iPad'];
-            const randomDevice = devices[Math.floor(Math.random() * devices.length)];
-            
-            const deviceList = document.getElementById('deviceList');
-            const newDevice = document.createElement('div');
-            newDevice.className = 'device-item';
-            newDevice.innerHTML = `
-                <span><span class="status-indicator"></span>${randomDevice}</span>
-                <span class="status-online">Online</span>
-            `;
-            deviceList.appendChild(newDevice);
-            
-            connectedUsers.push(randomDevice);
-            document.getElementById('deviceCount').textContent = connectedUsers.length;
-            
-            addMessage('🎉 System', `<strong>${randomDevice}</strong> joined the room!`);
-            showNotification(`${randomDevice} connected!`, 'success');
-        }
-
-        // Message System
-        function addMessage(sender, content) {
-            const chatArea = document.getElementById('chatArea');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = 'message';
-            messageDiv.innerHTML = `
-                <strong>${sender}:</strong> ${content}
-                <span class="message-time">${new Date().toLocaleTimeString()}</span>
-            `;
-            chatArea.appendChild(messageDiv);
-            chatArea.scrollTop = chatArea.scrollHeight;
-            messageCount++;
-        }
-
+        // Message handling
         function sendMessage() {
             const input = document.getElementById('messageInput');
             const message = input.value.trim();
-            
             if (message) {
-                addMessage('👤 You', message);
+                addMessage('You', message);
                 input.value = '';
-                
-                // Simulate response from connected device
+                // Simulate echo from connected device
                 setTimeout(() => {
-                    const responses = [
-                        'Got it! 👍',
-                        'Thanks for sharing! 😊',
-                        'Received your message ✅',
-                        'Cool! 🔥',
-                        'Understood 💯'
-                    ];
-                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-                    const randomUser = connectedUsers[Math.floor(Math.random() * Math.max(1, connectedUsers.length - 1)) + 1] || '📱 Friend';
-                    addMessage(`🤝 ${randomUser}`, randomResponse);
-                }, 1000 + Math.random() * 2000);
+                    addMessage('Connected Device', `Received: ${message}`);
+                }, 1000);
             }
         }
 
         function handleEnter(event) {
             if (event.key === 'Enter') {
-                event.preventDefault();
                 sendMessage();
             }
         }
 
-        function sendEmoji 
-      <!-- Socket.IO Client -->
+        function addMessage(sender, content) {
+            const chatArea = document.getElementById('chatArea');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message';
+            messageDiv.innerHTML = `<strong>${sender}:</strong> ${content} 
+                                   <span class="message-time">${new Date().toLocaleTimeString()}</span>`;
+            chatArea.appendChild(messageDiv);
+            chatArea.scrollTop = chatArea.scrollHeight;
+        }
+
+        function sendEmoji(emoji) {
+            addMessage('You', emoji);
+            // Simulate echo from connected device
+            setTimeout(() => {
+                addMessage('Connected Device', `Received emoji: ${emoji}`);
+            }, 500);
+        }
+
+        // File handling
+        function openFileUpload(type) {
+            const fileInput = document.getElementById('fileInput');
+            switch(type) {
+                case 'image':
+                    fileInput.accept = 'image/*';
+                    break;
+                case 'video':
+                    fileInput.accept = 'video/*';
+                    break;
+                case 'audio':
+                    fileInput.accept = 'audio/*';
+                    break;
+                default:
+                    fileInput.accept = '*';
+            }
+            fileInput.click();
+        }
+
+        function handleFileUpload(event) {
+            const files = event.target.files;
+            for (let file of files) {
+                addFileToList(file);
+                addMessage('You', `📎 Shared: ${file.name} (${(file.size/1024/1024).toFixed(2)}MB)`);
+            }
+        }
+
+        function addFileToList(file) {
+            const fileList = document.getElementById('fileList');
+            const fileDiv = document.createElement('div');
+            fileDiv.className = 'message';
+            
+            let fileIcon = '📁';
+            if (file.type.startsWith('image/')) fileIcon = '🖼️';
+            else if (file.type.startsWith('video/')) fileIcon = '🎥';
+            else if (file.type.startsWith('audio/')) fileIcon = '🎵';
+            
+            fileDiv.innerHTML = `
+                ${fileIcon} <strong>${file.name}</strong> 
+                <span style="opacity: 0.7">(${(file.size/1024/1024).toFixed(2)}MB)</span>
+                <button class="btn btn-secondary" style="margin-left: 10px; padding: 5px 10px; font-size: 0.8em;" 
+                        onclick="downloadFile('${file.name}')">Download</button>
+            `;
+            fileList.appendChild(fileDiv);
+        }
+
+        function downloadFile(filename) {
+            addMessage('System', `Downloading ${filename}...`);
+        }
+
+        // Quick actions
+        function shareLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    addMessage('You', `📍 Location shared: https://maps.google.com/?q=${lat},${lon}`);
+                });
+            } else {
+                addMessage('System', 'Location sharing not supported');
+            }
+        }
+
+        function shareLink() {
+            const url = prompt('Enter URL to share:');
+            if (url) {
+                addMessage('You', `🔗 Link shared: ${url}`);
+            }
+        }
+
+        function takeScreenshot() {
+            addMessage('System', '📸 Screenshot feature would capture screen here');
+        }
+
+        function simulateDeviceConnection() {
+            setTimeout(() => {
+                const deviceList = document.getElementById('deviceList');
+                const newDevice = document.createElement('div');
+                newDevice.className = 'device-item';
+                newDevice.innerHTML = `
+                    <span><span class="status-indicator"></span>Mobile Device</span>
+                    <span class="status-online">Online</span>
+                `;
+                deviceList.appendChild(newDevice);
+                addMessage('System', '📱 New device connected!');
+            }, 2000);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            initCanvas();
+            addMessage('System', 'Welcome to ShareConnect! 🎉');
+            addMessage('System', 'Share your room code with others to start connecting and sharing files, messages, and drawings in real-time.');
+        });
+        <!-- Socket.IO Client -->
 <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
 <script>
   const socket = io("http://localhost:5000");
@@ -828,3 +761,7 @@
     ctx.fill();
   });
 </script>
+
+    </script>
+</body>
+</html>
