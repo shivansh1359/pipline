@@ -1,1 +1,0 @@
-# ShareConnect\nReal-time share platform using Node.js, Socket.io and simple frontend.
